@@ -6,8 +6,10 @@ class EcommerceDataset:
         self.data = pd.read_csv(File)
     
     def returnFile(self):
-        return np.array(self.data.iloc[:, 3:7], dtype=np.float32),\
+        return np.array(self.data.iloc[:, [3, 4, 6]], dtype=np.float32),\
             np.array(self.data.iloc[:, -1], dtype=np.float32)
 
     def __len__(self):
         return len(self.data), len(self.data[0])
+
+print(EcommerceDataset('EcommerceCustomers.csv').returnFile()[0])
