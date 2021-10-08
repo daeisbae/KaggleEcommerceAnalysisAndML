@@ -11,5 +11,3 @@ class EcommerceDataset:
 
     def __len__(self):
         return len(self.data), len(self.data[0])
-
-print(EcommerceDataset('EcommerceCustomers.csv').returnFile()[0])
