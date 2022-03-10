@@ -33,5 +33,11 @@ class EcommerceDataset:
             return self.train_x, self.train_y
         return self.test_x, self.test_y
 
+    def return_all_data(self):
+        """
+        Return all x, y dataset
+        """
+        return self.data.iloc[:, [3, 4, 6]], self.data.iloc[:, -1]
+
     def __len__(self):
         return len(self.data), len(self.data[0])
